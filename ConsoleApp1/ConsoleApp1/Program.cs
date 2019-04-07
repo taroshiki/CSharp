@@ -10,6 +10,13 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("こんにちは、私はベイマックス");
+            Console.WriteLine("あなたの名前は？");
+            string name = Console.ReadLine();
+            Console.WriteLine("こんにちは、{0}。あなたの健康を守ります。",name);
+            Console.ReadLine();
+
+
         }
     }
 }
