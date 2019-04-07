@@ -10,13 +10,46 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("こんにちは、私はベイマックス");
-            Console.WriteLine("あなたの名前は？");
-            string name = Console.ReadLine();
-            Console.WriteLine("こんにちは、{0}。あなたの健康を守ります。",name);
+            System.Random rdom = new System.Random();
+            int cNum = rdom.Next(3);
+            ///　0 = ベイマックス
+            ///　1 = オラフ
+            ///　2 = ジーニー
+
+
+            string greeting;
+            string name_asking;
+            string name_calling;
+            string name;
+            switch (cNum)
+            {
+                case 0:
+                    Console.WriteLine("こんにちは、私はベイマックス。あなたの健康を守ります。");
+                    Console.WriteLine("あなたのお名前は？");
+                    name = Console.ReadLine();
+                    Console.WriteLine($"{name}ですね、登録しました。よろしくお願いします。");
+                    break;
+                case 1:
+                    Console.WriteLine("やぁ！僕はオラフ。ぎゅーって抱きしめて！");
+                    Console.WriteLine("君の名前は？");
+                    name = Console.ReadLine();
+                    Console.WriteLine($"{name}か!よろしくね！そっちのスヴェンもよろしくね。");
+                    break;
+                case 2:
+                    Console.WriteLine("オイ！1万年もじーっとしてたから首がガッチガチだわさ");
+                    Console.WriteLine("あんたがおいらのご主人様か！名前はなんてんだい？");
+                    name = Console.ReadLine();
+                    Console.WriteLine($"{name}ってのか!ご挨拶ご挨拶");
+                    break;
+                default:
+                    break;
+            }
+                                
             Console.ReadLine();
 
 
+
         }
+
     }
 }
