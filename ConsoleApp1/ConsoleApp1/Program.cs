@@ -10,18 +10,18 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            System.Random rdom = new System.Random();
-            int cNum = rdom.Next(3);
+            Greeting(new System.Random().Next());
             ///　0 = ベイマックス
             ///　1 = オラフ
             ///　2 = ジーニー
+            ///                
+            
+        }
 
-
-            string greeting;
-            string name_asking;
-            string name_calling;
+        static void Greeting(int CharaNum)
+        {
             string name;
-            switch (cNum)
+            switch (CharaNum)
             {
                 case 0:
                     Console.WriteLine("こんにちは、私はベイマックス。あなたの健康を守ります。");
@@ -44,11 +44,8 @@ namespace ConsoleApp1
                 default:
                     break;
             }
-                                
+
             Console.ReadLine();
-
-
-
         }
 
     }
