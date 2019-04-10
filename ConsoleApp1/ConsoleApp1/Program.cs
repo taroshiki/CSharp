@@ -14,8 +14,10 @@ namespace ConsoleApp1
             ///　0 = ベイマックス2
             ///　1 = オラフ
             ///　2 = ジーニー
-            ///                
-            
+            ///  
+            CollatingCmd collatingCmd = new CollatingCmd();
+            collatingCmd.OutputCmd();
+
         }
 
         static void Greeting(int CharaNum)
