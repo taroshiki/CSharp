@@ -11,7 +11,7 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             Greeting(new System.Random().Next(3));
-            ///　0 = ベイマックス
+            ///　0 = ベイマックス2
             ///　1 = オラフ
             ///　2 = ジーニー
             ///                
