@@ -37,5 +37,30 @@ namespace ConsoleApp1
 
             Console.ReadLine();
         }
+
+        public int WhatDoWeDoTdy(int CharaNum)
+        {
+            int ToDo;
+            switch(CharaNum)
+            {
+                case 0:
+                    Console.WriteLine("今日は何をしますか？");
+                    Console.WriteLine("0:コレーティングコマンドを出す　1:ベイマックス、今日は大丈夫だよ。");
+                    ToDo = int.Parse(Console.ReadLine());
+                    break;
+                case 1:
+                    Console.WriteLine("で、今日はなにする？");
+                    Console.WriteLine("0:コレーティングコマンドを出す　1:雪だるま作ろう！");
+                    ToDo = int.Parse(Console.ReadLine());
+                    break;
+                case 2:
+                    Console.WriteLine("それじゃご主人様、願いは何だい？");
+                    Console.WriteLine("0:コレーティングコマンドを出す　1:宇宙飛行士になる");
+                    ToDo = int.Parse(Console.ReadLine());
+                    break;
+            }
+
+            return 0;
+        }
     }
 }

@@ -10,15 +10,22 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            int charaNum = new System.Random().Next(3);
+
             Characters characters = new Characters();
-            characters.Greeting(new System.Random().Next(3));
+            characters.Greeting(charaNum);
             ///　0 = ベイマックス
             ///　1 = オラフ
             ///　2 = ジーニー
             ///  
+
+            characters.WhatDoWeDoTdy(charaNum);
             CollatingCmd collatingCmd = new CollatingCmd();
             collatingCmd.OutputCmd();
 
+
+            characters = null;
+            collatingCmd = null;
         }
 
         
