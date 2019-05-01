@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace ConsoleApp1
 {
-    class Characters
+    class Characters:CollatingCmd
     {
         public void Greeting(int CharaNum)
         {
@@ -61,6 +62,74 @@ namespace ConsoleApp1
             }
 
             return 0;
+        }
+
+        public string AskingSeller()
+        {
+            Console.WriteLine("店舗URLをどうぞ");
+            SetSeller(Console.ReadLine());
+
+            return GetSeller();
+        }
+
+        public string AskingService()
+        {
+            string checkingservice;
+
+            Console.WriteLine("あす楽ですか？それとも通常便ですか？");
+            Console.WriteLine("あす楽：0　通常：1");
+
+            checkingservice = Console.ReadLine();
+            switch (checkingservice)
+            {
+                case "0":
+                    SetService("tomorrow");
+                    break;
+                case "1":
+                    SetService("std");
+                    break;
+                default:
+                    Console.WriteLine("0か1で入力して下さい。");
+                    AskingService();
+                    break;
+            }
+
+
+            return GetService();
+        }
+
+        public string AskingPrinter()
+        {
+            string checkingprinter;
+
+            Console.WriteLine("どこのプリンターから出力しますか？");
+            Console.WriteLine("流山執務室：0");
+
+            checkingprinter = Console.ReadLine();
+            switch (checkingprinter)
+            {
+                case "0":
+                    this.SetPrint("343");
+                    break;
+                default:
+                    Console.WriteLine("その他の拠点は準備中です。0で入力をお願いします。");
+                    this.AskingPrinter();
+                    break;
+            }
+
+            return this.GetPrint();
+
+        }
+
+
+        public void AskingOutput()
+        {
+            string uransw;
+
+            Console.WriteLine("コマンドはこちらでいいですか？");
+            Console.WriteLine("OK!:0　これじゃないなー：1");
+            uransw = Console.ReadLine();
+
         }
     }
 }

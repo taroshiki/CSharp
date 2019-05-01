@@ -8,19 +8,48 @@ namespace ConsoleApp1
 
         }
 
-        string seller;
-        string service;
-        string print;
+        private string seller;
+        private string service;
+        private string print;
 
-        public void OutputCmd()
+        public string GetSeller()
         {
-            seller = "lemusee";　///　URLを入力して反映されるように
-            service = "std";　/// あす楽か通常かを選んでできるようにしたい
-            print = "999";　///プリンターは選んで反映されるように
+            return seller;
+        }
 
-            Console.WriteLine($"collating service({service}) seller({seller}) size(xlall,lall,mall) opick print({print})");
+        public void SetSeller(string value)
+        {
+            seller = value;
+        }
+
+        public string GetService()
+        {
+            return service;
+        }
+
+        public void SetService(string value)
+        {
+            service = value;
+        }
+
+        public string GetPrint()
+        {
+            return print;
+        }
+
+        public void SetPrint(string value)
+        {
+            print = value;
+        }
+
+        public void OutputCmd(string sell,string serv,string prt)
+        {
+            Console.WriteLine($"collating service({serv}) seller({sell}) size(xlall,lall,mall) opick print({prt})");
+            
             ///コレーティングコマンドを作るための文章。
 
         }   
+
+        
     }
 }　　

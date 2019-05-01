@@ -8,27 +8,30 @@ namespace ConsoleApp1
 {
     class Program
     {
+        
+
+
         static void Main(string[] args)
         {
-            int charaNum = new System.Random().Next(3);
-
+            ///int charaNum = new System.Random().Next(3);
             Characters characters = new Characters();
-            characters.Greeting(charaNum);
+            CollatingCmd collatingCmd = new CollatingCmd();
+
+
+            characters.Greeting(0);
             ///　0 = ベイマックス
             ///　1 = オラフ
             ///　2 = ジーニー
-            ///  
+            ///  余裕があれば増やしていく予定→現状はベイマックスだけ
 
-            characters.WhatDoWeDoTdy(charaNum);
-            CollatingCmd collatingCmd = new CollatingCmd();
-            collatingCmd.OutputCmd();
+            characters.WhatDoWeDoTdy(0);
+            collatingCmd.OutputCmd(characters.AskingSeller(),characters.AskingService(),characters.AskingPrinter());
+            Console.Read();
 
 
             characters = null;
             collatingCmd = null;
         }
-
-        
 
     }
 }
