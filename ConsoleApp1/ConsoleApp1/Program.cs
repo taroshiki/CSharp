@@ -8,9 +8,7 @@ namespace ConsoleApp1
 {
     class Program
     {
-        
-
-
+       
         static void Main(string[] args)
         {
             ///int charaNum = new System.Random().Next(3);
@@ -26,8 +24,11 @@ namespace ConsoleApp1
 
             characters.WhatDoWeDoTdy(0);
             collatingCmd.OutputCmd(characters.AskingSeller(),characters.AskingService(),characters.AskingPrinter());
-            Console.Read();
+            Console.ReadLine();
+            
 
+
+            
 
             characters = null;
             collatingCmd = null;

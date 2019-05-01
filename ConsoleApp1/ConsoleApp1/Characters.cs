@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace ConsoleApp1
 {
     class Characters:CollatingCmd
+        ///CollatingCmdを継承
     {
         public void Greeting(int CharaNum)
         {
@@ -38,31 +38,56 @@ namespace ConsoleApp1
 
             Console.ReadLine();
         }
+        /// <summary>
+        /// 挨拶
+        /// 本番は乱数でキャラクターが変わる予定
+        /// </summary>
+        /// <param name="CharaNum"></param>
+        /// <returns></returns>
 
         public int WhatDoWeDoTdy(int CharaNum)
         {
-            int ToDo;
+            string ToDo;
             switch(CharaNum)
             {
                 case 0:
                     Console.WriteLine("今日は何をしますか？");
                     Console.WriteLine("0:コレーティングコマンドを出す　1:ベイマックス、今日は大丈夫だよ。");
-                    ToDo = int.Parse(Console.ReadLine());
+                    ToDo = Console.ReadLine();
+                    switch(ToDo)
+                    {
+                        case "0":
+                            break;
+                        case "1":
+                            Console.WriteLine("わかりました。また明日");
+                            Environment.Exit(0);
+                            break;
+                        default:
+                            Console.WriteLine("え？");
+                            this.WhatDoWeDoTdy(0);
+                            break;
+
+                    }
                     break;
                 case 1:
                     Console.WriteLine("で、今日はなにする？");
                     Console.WriteLine("0:コレーティングコマンドを出す　1:雪だるま作ろう！");
-                    ToDo = int.Parse(Console.ReadLine());
+                    ToDo = Console.ReadLine();
                     break;
                 case 2:
                     Console.WriteLine("それじゃご主人様、願いは何だい？");
                     Console.WriteLine("0:コレーティングコマンドを出す　1:宇宙飛行士になる");
-                    ToDo = int.Parse(Console.ReadLine());
+                    ToDo = Console.ReadLine();
                     break;
             }
 
             return 0;
         }
+        /// <summary>
+        /// 
+        /// 
+        /// </summary>
+        /// <returns></returns>
 
         public string AskingSeller()
         {
@@ -71,6 +96,13 @@ namespace ConsoleApp1
 
             return GetSeller();
         }
+        /// <summary>
+        /// 店舗URLを入力
+        /// ゆくゆくは店舗マスタDBを作り、
+        /// そこと照らし合わせるようにしたい
+        /// 
+        /// </summary>
+        /// <returns></returns>
 
         public string AskingService()
         {
@@ -78,7 +110,7 @@ namespace ConsoleApp1
 
             Console.WriteLine("あす楽ですか？それとも通常便ですか？");
             Console.WriteLine("あす楽：0　通常：1");
-
+            
             checkingservice = Console.ReadLine();
             switch (checkingservice)
             {
@@ -93,10 +125,13 @@ namespace ConsoleApp1
                     AskingService();
                     break;
             }
-
-
             return GetService();
         }
+        /// <summary>
+        /// あす楽か通常か
+        /// 通常:0をデフォルトにしてもいいかも
+        /// </summary>
+        /// <returns></returns>
 
         public string AskingPrinter()
         {
@@ -104,7 +139,7 @@ namespace ConsoleApp1
 
             Console.WriteLine("どこのプリンターから出力しますか？");
             Console.WriteLine("流山執務室：0");
-
+            
             checkingprinter = Console.ReadLine();
             switch (checkingprinter)
             {
@@ -120,9 +155,17 @@ namespace ConsoleApp1
             return this.GetPrint();
 
         }
+        /// <summary>
+        /// 流山執務室:343が優先
+        /// ゆくゆくは枚方
+        /// 流山・枚方でプリンターが増えれば随時対応
+        /// </summary>
+        /// <param name="CharaNum"></param>
+        /// 
 
 
-        public void AskingOutput()
+
+        public void CheckingOutput(int CharaNum)
         {
             string uransw;
 
@@ -131,5 +174,13 @@ namespace ConsoleApp1
             uransw = Console.ReadLine();
 
         }
+        /// <summary>
+        /// 使うか未定
+        /// 
+        /// </summary>
+        /// <returns></returns>
+
+
+
     }
 }

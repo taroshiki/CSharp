@@ -1,4 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 namespace ConsoleApp1
 {
     public class CollatingCmd
@@ -11,6 +16,7 @@ namespace ConsoleApp1
         private string seller;
         private string service;
         private string print;
+        ///諸々カプセル化
 
         public string GetSeller()
         {
@@ -46,9 +52,11 @@ namespace ConsoleApp1
         {
             Console.WriteLine($"collating service({serv}) seller({sell}) size(xlall,lall,mall) opick print({prt})");
             
-            ///コレーティングコマンドを作るための文章。
-
         }   
+        
+
+
+
 
         
     }
