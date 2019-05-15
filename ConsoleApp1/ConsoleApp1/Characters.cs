@@ -212,7 +212,7 @@ namespace ConsoleApp1
                                    AskingPrinter(),
                                    AskingMail()
                                    );
-
+                            AskToRepeat(0);
                             break;
 
                         case "1":
