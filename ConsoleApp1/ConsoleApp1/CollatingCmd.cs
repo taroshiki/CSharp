@@ -16,7 +16,18 @@ namespace ConsoleApp1
         private string seller;
         private string service;
         private string print;
+        private string mail;
         ///諸々カプセル化
+
+        public string GetMail()
+        {
+            return mail;
+        }
+
+        public void SetMail(string value)
+        {
+            mail = value;
+        }
 
         public string GetSeller()
         {
@@ -48,9 +59,9 @@ namespace ConsoleApp1
             print = value;
         }
 
-        public void OutputCmd(string sell,string serv,string prt)
+        public void OutputCmd(string sell,string serv,string prt,string mail)
         {
-            Console.WriteLine($"collating service({serv}) seller({sell}) size(xlall,lall,mall) opick print({prt})");
+            Console.WriteLine($"collating service({serv}) seller({sell}) size(xlall,lall,mall) opick print({prt}) {mail}");
             
         }   
         

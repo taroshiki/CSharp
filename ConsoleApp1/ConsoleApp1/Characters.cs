@@ -36,7 +36,7 @@ namespace ConsoleApp1
                     break;
             }
 
-            Console.ReadLine();
+            
         }
         /// <summary>
         /// 挨拶
@@ -109,7 +109,7 @@ namespace ConsoleApp1
             string checkingservice;
 
             Console.WriteLine("あす楽ですか？それとも通常便ですか？");
-            Console.WriteLine("あす楽：0　通常：1");
+            Console.WriteLine("0:あす楽　1:通常");
             
             checkingservice = Console.ReadLine();
             switch (checkingservice)
@@ -138,21 +138,21 @@ namespace ConsoleApp1
             string checkingprinter;
 
             Console.WriteLine("どこのプリンターから出力しますか？");
-            Console.WriteLine("流山執務室：0");
+            Console.WriteLine("0:流山執務室");
             
             checkingprinter = Console.ReadLine();
             switch (checkingprinter)
             {
                 case "0":
-                    this.SetPrint("343");
+                    SetPrint("343");
                     break;
                 default:
                     Console.WriteLine("その他の拠点は準備中です。0で入力をお願いします。");
-                    this.AskingPrinter();
+                    AskingPrinter();
                     break;
             }
 
-            return this.GetPrint();
+            return GetPrint();
 
         }
         /// <summary>
@@ -163,6 +163,30 @@ namespace ConsoleApp1
         /// <param name="CharaNum"></param>
         /// 
 
+        public string AskingMail()
+        {
+            string checkingmail;
+
+            Console.WriteLine("ゆうパックですか、それともゆうパケットですか？");
+            Console.WriteLine("0:ゆうパック　1:ゆうパケット");
+
+            checkingmail = Console.ReadLine();
+            switch(checkingmail)
+            {
+                case "0":
+                    SetMail("");
+                    break;
+                case "1":
+                    SetMail("mail");
+                    break;
+                default:
+                    Console.WriteLine("0か1で入力して下さい。");
+                    AskingMail();
+                    break;
+            }
+
+            return GetMail();
+        }
 
 
         public void CheckingOutput(int CharaNum)

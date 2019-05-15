@@ -23,7 +23,12 @@ namespace ConsoleApp1
             ///  余裕があれば増やしていく予定→現状はベイマックスだけ
 
             characters.WhatDoWeDoTdy(0);
-            collatingCmd.OutputCmd(characters.AskingSeller(),characters.AskingService(),characters.AskingPrinter());
+            collatingCmd.OutputCmd(
+                                   characters.AskingSeller(),
+                                   characters.AskingService(),
+                                   characters.AskingPrinter(),
+                                   characters.AskingMail()
+                                   );
             Console.ReadLine();
             
 
