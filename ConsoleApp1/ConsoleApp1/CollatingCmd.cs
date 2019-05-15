@@ -59,8 +59,9 @@ namespace ConsoleApp1
             print = value;
         }
 
-        public void OutputCmd(string sell,string serv,string prt,string mail)
+        public void OutputCmd(string serv,string sell,string prt,string mail)
         {
+                       
             Console.WriteLine($"collating service({serv}) seller({sell}) size(xlall,lall,mall) opick print({prt}) {mail}");
             
         }   

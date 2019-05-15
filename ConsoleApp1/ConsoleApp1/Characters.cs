@@ -187,22 +187,46 @@ namespace ConsoleApp1
 
             return GetMail();
         }
-
-
-        public void CheckingOutput(int CharaNum)
-        {
-            string uransw;
-
-            Console.WriteLine("コマンドはこちらでいいですか？");
-            Console.WriteLine("OK!:0　これじゃないなー：1");
-            uransw = Console.ReadLine();
-
-        }
         /// <summary>
-        /// 使うか未定
         /// 
         /// </summary>
-        /// <returns></returns>
+
+
+        public void AskToRepeat(int ChaNum)
+        {
+            string repeat_or_not;
+
+            switch(ChaNum)
+            {
+                case 0:
+                    Console.WriteLine("続けて作成しますか？");
+                    Console.WriteLine("0:続けて作成する　1:今日はもうやめとく");
+
+                    repeat_or_not = Console.ReadLine();
+                    switch(repeat_or_not)
+                    {
+                        case "0":
+                            OutputCmd(
+                                   AskingSeller(),
+                                   AskingService(),
+                                   AskingPrinter(),
+                                   AskingMail()
+                                   );
+
+                            break;
+
+                        case "1":
+                            Console.WriteLine("わかりました。また明日");
+                            Environment.Exit(0);
+                            break;
+                        default:
+                            Console.WriteLine("0か1で入力して下さい");
+                            AskToRepeat(0);
+                            break;
+                    }
+                break;
+            }
+        }
 
 
 

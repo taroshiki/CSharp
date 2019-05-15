@@ -29,6 +29,7 @@ namespace ConsoleApp1
                                    characters.AskingPrinter(),
                                    characters.AskingMail()
                                    );
+            characters.AskToRepeat(0);
             Console.ReadLine();
             
 
